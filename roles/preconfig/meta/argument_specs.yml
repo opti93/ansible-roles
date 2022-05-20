@@ -3,4 +3,4 @@ argument_specs:
     short_description: Настройка серверов для работы с Docker
     author: Anton Larichev
 dependencies:
-  - role: deploy      
+  - role: deploy
