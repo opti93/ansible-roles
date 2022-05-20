@@ -1,6 +1,0 @@
----
-- name: testAWS
-  hosts: cluster
-  tasks:
-    - name: ping
-      ping:
