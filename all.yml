@@ -1,0 +1,4 @@
+---
+- name: Утановка Docker
+  hosts: cluster
+  tasks:
