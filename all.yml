@@ -1,4 +1,5 @@
 ---
-- name: Утановка Docker
+- name: All configs
   hosts: cluster
-  tasks:
+  roles:
+    - preconfig
