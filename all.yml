@@ -2,4 +2,5 @@
 - name: All configs
   hosts: cluster
   roles:
+    - deploy
     - preconfig
