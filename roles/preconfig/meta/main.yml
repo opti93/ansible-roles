@@ -1,6 +1,11 @@
-argument_specs:
-  main:
-    short_description: Настройка серверов для работы с Docker
-    author: Anton Larichev
+galaxy_info:
+  role_name: preconfig
+  description: Настройка серверов для работы с Docker
+  author: Anton Larichev
+  license: MIT
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
 dependencies:
   - role: deploy
