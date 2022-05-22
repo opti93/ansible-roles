@@ -1,6 +1,19 @@
 ---
-- name: All configs
-  hosts: cluster
+- name: deploy server
+  hosts: deploy
   roles:
     - preconfig
-    - deploy
+  #  - deploy
+  #  - swarm_init
+
+- name: managers servers
+  hosts: managers
+  roles:
+    - preconfig
+   # - swarm_join
+
+- name: workers servers
+  hosts: workers
+  roles:
+    - preconfig
+  #  - swarm_join
