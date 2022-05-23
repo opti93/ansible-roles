@@ -13,10 +13,12 @@
   hosts: managers
   roles:
     - role: preconfig
+      tags: universe
    # - swarm_join
 
 - name: workers servers
   hosts: workers
   roles:
     - role: preconfig
+      tags: universe
   #  - swarm_join
