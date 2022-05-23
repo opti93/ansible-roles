@@ -2,7 +2,6 @@
 - name: deploy server
   hosts: deploy
   roles:
-    - role: preconfig
     - role: deploy
       tags: deploing
       test: 0
