@@ -16,13 +16,14 @@
       tags: preconfig
     - role: deploy
       tags: deploing
-      test: 0    
+      test: 0
    # - swarm_join
 
 - name: workers servers
   hosts: workers
   roles:
     - role: preconfig
+      tags: preconfig
     - role: deploy
       tags: deploing
       test: 0
