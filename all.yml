@@ -2,9 +2,10 @@
 - name: deploy server
   hosts: deploy
   roles:
-    - role: deploy
-      tags: deploing
-      test: 0
+    - role: preconfig
+    #- role: deploy
+    #  tags: deploing
+    #  test: 0
   #  - swarm_init
 
 - name: managers servers
