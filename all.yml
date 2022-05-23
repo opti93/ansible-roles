@@ -2,18 +2,21 @@
 - name: deploy server
   hosts: deploy
   roles:
-    - preconfig
+    - role: preconfig
+      tags: universe
   #  - deploy
   #  - swarm_init
 
 - name: managers servers
   hosts: managers
   roles:
-    - preconfig
+    - role: preconfig
+      tags: universe
    # - swarm_join
 
 - name: workers servers
   hosts: workers
   roles:
-    - preconfig
+    - role: preconfig
+      tags: universe
   #  - swarm_join
