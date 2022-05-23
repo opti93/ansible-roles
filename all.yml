@@ -3,7 +3,7 @@
   hosts: deploy
   roles:
     - role: preconfig
-      tags: universe
+      tags: "universe"
   #  - deploy
   #  - swarm_init
 
