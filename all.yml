@@ -3,8 +3,7 @@
   hosts: deploy
   roles:
     - role: preconfig
-      tags:
-        - universe
+      tags: universe
   #  - deploy
   #  - swarm_init
 
@@ -12,14 +11,12 @@
   hosts: managers
   roles:
     - role: preconfig
-      tags:
-        - universe
+      tags: universe
    # - swarm_join
 
 - name: workers servers
   hosts: workers
   roles:
     - role: preconfig
-      tags:
-        - universe
+      tags: universe
   #  - swarm_join
