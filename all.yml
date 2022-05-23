@@ -3,14 +3,15 @@
   hosts: deploy
   roles:
     - role: preconfig
-    - role: deploy
-      test: 0
   #  - swarm_init
 
 - name: managers servers
   hosts: managers
   roles:
     - role: preconfig
+    - role: deploy
+      tags: deploing
+      test: 0
    # - swarm_join
 
 - name: workers servers
