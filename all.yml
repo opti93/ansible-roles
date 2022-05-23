@@ -17,6 +17,4 @@
   hosts: workers
   roles:
     - role: preconfig
-    - role: deploy
-      test: 0
   #  - swarm_join
