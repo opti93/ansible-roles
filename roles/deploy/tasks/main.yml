@@ -1,4 +1,6 @@
 ---
 - name: Задача deploy
   command: "echo {{ test }}"
-  tags: deploy
+  register: res
+- debug:
+  var: res
