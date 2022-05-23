@@ -3,4 +3,4 @@
   command: "echo {{ test }}"
   register: res
 - debug:
-  var: res
+    var: res
