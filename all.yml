@@ -5,6 +5,8 @@
     - role: preconfig
       tags: universe
     - role: deploy
+      test: 0
+      tags: deploy
   #  - swarm_init
 
 - name: managers servers

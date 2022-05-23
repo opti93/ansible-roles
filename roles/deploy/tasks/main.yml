@@ -1,3 +1,4 @@
 ---
 - name: Задача deploy
   command: "echo {{ test }}"
+  tags: deploy
