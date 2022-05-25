@@ -1,9 +1,7 @@
 ---
 - name: Циклы
-  vars:
-    data:
-      a: 1
-      b: 2
   debug:
-    msg: "{{ item.key }} - {{ item.value }}"
-  loop: "{{ data | dict2items }}"
+    msg: "{{ item }}"
+  loop: "{{ groups['all'] }}"
+  
+  
