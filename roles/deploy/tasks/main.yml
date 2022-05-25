@@ -1,6 +1,7 @@
 ---
-- name: Задача deploy
-  command: "echo {{ test }}"
-  register: res
-- debug:
-    var: res
+- name: Циклы
+  debug:
+    msg: "{{ item }}"
+  loop:
+    - a
+    - b
