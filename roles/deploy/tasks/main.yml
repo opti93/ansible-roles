@@ -1,7 +1,7 @@
 ---
 - name: Циклы
   debug:
-    msg: "{{ item }}"
+    msg: "{{ item.name }} is {{ item.group }}"
   loop:
-    - a
-    - b
+    - { name: "Вася", group: "admin" }
+    - { name: "Маша", group: "admin" }
