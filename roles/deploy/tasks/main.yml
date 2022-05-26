@@ -1,9 +1,9 @@
 - name: Циклы
   debug:
-    msg: "{{ item.name }}"
+    msg: "{{ item.name }} - {{ item.my-indx}}"
   loop:
     - name: Vasya
     - name: Petya
     - name: Masha
   loop_control:
-    pause: 3
+    index: my-indx
