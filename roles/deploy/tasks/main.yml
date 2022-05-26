@@ -2,6 +2,8 @@
 - name: Циклы
   debug:
     mgs: "{{ item }}"
-  loop: [a, b]
+  loop:
+    - a
+    - b
   
   
