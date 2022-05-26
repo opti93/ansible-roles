@@ -3,10 +3,7 @@
     msg: "{{ item.name }}"
   loop:
     - name: Vasya
-      group: admin
-      roles:
-        admin: true
-        manager: true
-        user: true
+    - name: Petya
+    - name: Masha
   loop_control:
-    label: "{{ item.name }}"
+    pause: 3
