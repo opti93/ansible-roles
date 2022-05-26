@@ -1,6 +1,6 @@
 - name: Циклы
   debug:
-    msg: "{{ item.name }} - {{ item.my-indx}}"
+    msg: "{{ item.name }} - {{ my-indx }}"
   loop:
     - name: Vasya
     - name: Petya
