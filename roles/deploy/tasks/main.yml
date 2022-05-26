@@ -1,9 +1,9 @@
 - name: Циклы
   debug:
-    msg: "{{ item.name }} - {{ my_indx }}"
+    msg: "{{ outer_item.name }}"
   loop:
     - name: Vasya
     - name: Petya
     - name: Masha
   loop_control:
-    index_var: my_indx
+    loop_var: outer_item
