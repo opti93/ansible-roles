@@ -6,4 +6,4 @@
   debug:
     msg: "{{ item.key }} - {{ item.value }}"
   loop:
-    "{{ data | dict2item }}"
+    "{{ data | dict2items }}"
