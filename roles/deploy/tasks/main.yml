@@ -1,9 +1,11 @@
 ---
 - name: Циклы
   debug:
-    msg: "{{ item }}"
-  loop: [a, b]
-  # - a
-  # - b
-  
+    msg: "{{ item.name }} is {{ item.group }}"
+  loop:
+    - name: Вася
+      group: admin
+    - name: Маша
+      group: admin
+
   
