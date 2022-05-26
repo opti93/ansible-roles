@@ -6,4 +6,4 @@
     - name: Petya
     - name: Masha
   loop_control:
-    index: my-indx
+    index_var: my-indx
