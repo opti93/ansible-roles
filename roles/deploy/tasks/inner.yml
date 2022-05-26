@@ -1,0 +1,5 @@
+---
+- name: Вложенный цикл
+  debug:
+    msg: "{{ item }}"
+  loop: [a, b]
