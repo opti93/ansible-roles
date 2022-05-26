@@ -1,7 +1,7 @@
 ---
 - name: Циклы
   debug:
-    msg: "{{ item }}"
-  loop: "{{ groups['all'] }}"
+    mgs: "{{ item }}"
+  loop: [a, b]
   
   
