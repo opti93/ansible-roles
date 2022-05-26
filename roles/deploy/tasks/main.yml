@@ -1,9 +1,10 @@
 - name: Циклы
-  vars:
-    data:
-      a: 1
-      b: 2
   debug:
-    msg: "{{ item.key }} - {{ item.value }}"
+    msg: "{{ item.name }}"
   loop:
-    "{{ data | dict2items }}"
+    - name: Vasya
+      group: admin
+      roles:
+        admin: true
+        manager: true
+        user: true
