@@ -1,11 +1,9 @@
----
 - name: Циклы
+  vars:
+    data:
+      a: 1
+      b: 2
   debug:
-    msg: "{{ item.name }} is {{ item.group }}"
+    msg: "{{ item.key }} - {{ item.value }}"
   loop:
-    - name: Вася
-      group: admin
-    - name: Маша
-      group: admin
-
-  
+    "{{ data | dict2item }}"
