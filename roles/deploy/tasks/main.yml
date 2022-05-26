@@ -1,6 +1,5 @@
 - name: Циклы
-  debug:
-    msg: "{{ outer_item.name }}"
+  include_tasks: inner.yml
   loop:
     - name: Vasya
     - name: Petya
