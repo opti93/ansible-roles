@@ -7,5 +7,5 @@
       - key: b
         value: 2
   debug:
-    msg: "{{ admin | item2dict }}"
+    msg: "{{ admin | items2dict }}"
   
