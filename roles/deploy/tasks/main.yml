@@ -1,5 +1,5 @@
 ---
 - name: Задача Deploy
   debug:
-    msg: "{{ lookup('file', 'main.yml', errors='warn') }}"
+    msg: "{{ my_var | default(5) }}"
   
