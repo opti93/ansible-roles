@@ -1,4 +1,4 @@
 - name: Задача Deploy
   debug:
-    msg: "{{ lookup('file', '../meta/main.yml', ) }}"
+    msg: "{{ lookup('file', '../meta/main.yml') }}"
   
