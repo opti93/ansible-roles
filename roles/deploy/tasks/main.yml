@@ -1,5 +1,7 @@
 ---
 - name: Задача Deploy
+  vars:
+    admin: true
   debug:
-    msg: "{{ my_var | default(5) }}"
+    msg: "{{ admin | type_debug }}"
   
