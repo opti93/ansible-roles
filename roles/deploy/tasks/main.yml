@@ -1,8 +1,4 @@
-- name: Циклы
-  include_tasks: inner.yml
-  loop:
-    - name: Vasya
-    - name: Petya
-    - name: Masha
-  loop_control:
-    loop_var: outer_item
+- name: Задача Deploy
+  debug:
+    msg: "{{ lookup('file', '../meta/main.yml', ) }}"
+  
