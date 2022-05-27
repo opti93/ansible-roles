@@ -2,10 +2,10 @@
 - name: Задача Deploy
   vars:
     admin:
-      - keys: a
-        values: 1
-      - key: b
-        value: 2
+      - key: a
+        value: 1
+      - keys: b
+        values: 2
   debug:
     msg: "{{ admin | items2dict }}"
   
