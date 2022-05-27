@@ -3,7 +3,7 @@
   vars:
     admin:
       - keys: a
-        value: 1
+        values: 1
       - keyss: b
         values: 2
   debug:
