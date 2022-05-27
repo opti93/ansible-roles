@@ -1,11 +1,7 @@
 ---
 - name: Задача Deploy
   vars:
-    admin:
-      - keys: a
-        values: 1
-      - keys: b
-        values: 2
+    admin: "true"
   debug:
-    msg: "{{ admin | items2dict(key_name='keys', value_name='values') }}"
+    msg: "{{ admin }}"
   
