@@ -2,8 +2,8 @@
 - name: Задача Deploy
   vars:
     admin:
-      - key: a
-        value: 1
+      - keys: a
+        values: 1
       - key: b
         value: 2
   debug:
