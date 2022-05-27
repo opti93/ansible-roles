@@ -3,5 +3,5 @@
   vars:
     admin: "true"
   debug:
-    msg: "{{ admin }}"
+    msg: "{{ admin | bool }}"
   
