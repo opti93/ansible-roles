@@ -1,7 +1,11 @@
 ---
 - name: Задача Deploy
   vars:
-    admin: true
+    admin:
+      - key: a
+        value: 1
+      - key: b
+        value: 2
   debug:
-    msg: "{{ admin | type_debug }}"
+    msg: "{{ admin | item2dict }}"
   
