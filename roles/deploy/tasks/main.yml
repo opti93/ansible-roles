@@ -1,7 +1,7 @@
 ---
-- name: Задача Deploy
-  vars:
-    admin: "true"
-  debug:
-    msg: "{{ admin | type_debug }}"
+- name: Создание Сети
+  community.docker.docker_network:
+    name: app_network
+    driver: overlay
+
   
