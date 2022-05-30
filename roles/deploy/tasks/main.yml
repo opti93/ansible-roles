@@ -6,6 +6,6 @@
 
 - name: Выкладка сервиса
   include: "../services/{{ item }}/service.yml"
-  Vars:
-    - name: "{{ item }}"
+  vars:
+    name: "{{ item }}"
   loop: "{{ services }}"
