@@ -5,26 +5,16 @@
     - role: preconfig
       tags: preconfig
     - role: deploy
-      tags: deploing
-      test: 0
-  #  - swarm_init
+      tags: deploy
 
 - name: managers servers
   hosts: managers
   roles:
     - role: preconfig
       tags: preconfig
-    - role: deploy
-      tags: deploing
-      test: 0
-   # - swarm_join
 
 - name: workers servers
   hosts: workers
   roles:
     - role: preconfig
       tags: preconfig
-    - role: deploy
-      tags: deploing
-      test: 0
-  #  - swarm_join
