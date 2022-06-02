@@ -1,5 +1,5 @@
 ---
-- name: Создание секрета
+- name: "[{{ name }}] Конфигурация секрета"
   block:
     - name: "[{{ name }}] Создаем секрет"
       community.docker.docker_secret:
@@ -26,7 +26,7 @@
         state: present
     
 
-- name: Выкладка сервиса
+- name: "[{{ name }}] Выкладка сервиса"
   block:
     - name: "[{{ name }}] Выкладываем сервис"
       community.docker.docker_swarm_service:
