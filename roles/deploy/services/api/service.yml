@@ -1,7 +1,6 @@
 ---
 - name: "[{{ name }}] Конфигурация секрета"
   block:
-    - name: "[{{ name }}] Создаем секрет"
       include_tasks: "../secret.yml"
 
 - name: "[{{ name }}] Выкладка сервиса"
