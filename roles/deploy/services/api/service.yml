@@ -4,22 +4,12 @@
     - name: "[{{ name }}] Создаем секрет"
       include_tasks: "../secret.yml"
 
-  rescue:
-    - name: Удаляем сервис
-      community.docker.docker_swarm_service:
-        name: "{{ name }}"
-        state: absent
-
-    - name: "[{{ name }}] Создаем секрет"
-      include_tasks: "../secret.yml"
-    
-
 - name: "[{{ name }}] Выкладка сервиса"
   block:
     - name: "[{{ name }}] Выкладываем сервис"
       community.docker.docker_swarm_service:
         name: "{{ name }}"
-        image: optimus2077/api:latest
+        image: optimus2077/{{ name }}:latest
         state: present
         networks:
         - name: "{{ networkName }}"
