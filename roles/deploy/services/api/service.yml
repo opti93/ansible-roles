@@ -2,13 +2,7 @@
 - name: "[{{ name }}] Конфигурация секрета"
   block:
     - name: "[{{ name }}] Создаем секрет"
-      community.docker.docker_secret:
-        name: "{{ name }}.env"
-        data: "{{ lookup('file', '.env') | b64encode }}"
-        labels:
-          secret: "{{ lookup('file', '.env') | hash('sha1') }}"
-        data_is_b64: true
-        state: present
+      include_tasks: "../secret.yml"
 
   rescue:
     - name: Удаляем сервис
@@ -17,13 +11,7 @@
         state: absent
 
     - name: "[{{ name }}] Создаем секрет"
-      community.docker.docker_secret:
-        name: "{{ name }}.env"
-        data: "{{ lookup('file', '.env') | b64encode }}"
-        labels:
-          secret: "{{ lookup('file', '.env') | hash('sha1') }}"
-        data_is_b64: true
-        state: present
+      include_tasks: "../secret.yml"
     
 
 - name: "[{{ name }}] Выкладка сервиса"
