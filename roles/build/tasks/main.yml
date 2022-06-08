@@ -1,0 +1,17 @@
+---
+- name: Клонируем репозиторий
+  ansible.builtin.git:
+    repo: 'https://github.com/AlariCode/docker-demo.git'
+    dest: "{{ git_folder }}"
+    version: block-7
+
+- name: Собираем image
+  community.docker.docker_image:
+    build:
+      path: "{{ git_folder }}"
+      dockerfile: "{{ git_folder }}/apps/{{ item }}/Dockerfile"
+    name: "{{ registry_name: }}{{ item }}"
+    tag: latest
+    push: yes
+    source: build
+  loop: "{{ services }}"

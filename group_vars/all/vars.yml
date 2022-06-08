@@ -8,3 +8,11 @@ rmqDefaults:
     value: "{{rmq.password}}"
   - name: AMQP_HOSTNAME
     value: rmq
+
+registry_name: "optimus2077/"
+
+services:
+  - api
+  - app
+  - converter
+  - rmq
