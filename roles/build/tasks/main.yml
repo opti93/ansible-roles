@@ -1,9 +1,4 @@
 ---
-- name: Создаем папку для репозитория
-  path: "{{ git_folder }}"
-  state: directory
-  mode: '0755'
-
 - name: Клонируем репозиторий
   ansible.builtin.git:
     repo: 'https://github.com/AlariCode/docker-demo.git'
