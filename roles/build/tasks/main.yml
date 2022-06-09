@@ -1,4 +1,9 @@
 ---
+- name: Создаем папку для репозитория
+  file:
+  state: present
+  path: "{{ git_folder }}"
+
 - name: Клонируем репозиторий
   ansible.builtin.git:
     repo: 'https://github.com/AlariCode/docker-demo.git'
@@ -9,9 +14,14 @@
   community.docker.docker_image:
     build:
       path: "{{ git_folder }}"
-      dockerfile: "{{ git_folder }}/apps/{{ item }}/Dockerfile"
-    name: "{{ registry_name: }}{{ item }}"
-    tag: latest
+      dockerfile: "{{ git_folder }}/apps/{{ item.name }}/Dockerfile"
+    name: "{{ registry_name }}{{ item.name }}"
+    tag: "{{ item.version }}"
     push: yes
     source: build
-  loop: "{{ services }}"
+  loop: "{{ services | difference(non_build_services) }}"
+
+- name: Удаляем репозиторий
+  file:
+  state: absent
+  path: "{{ git_folder }}"
