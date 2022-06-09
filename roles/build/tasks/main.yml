@@ -1,9 +1,9 @@
 ---
 - name: Log into DockerHub
   docker_login:
-    username: "{{ docker_login.user }}"
-    password: "{{ docker_login.password }}"
-    email: "{{ docker_login.email }}"
+    username: "{{ docker_logining.user }}"
+    password: "{{ docker_logining.password }}"
+    email: "{{ docker_logining.email }}"
 
 - name: Клонируем репозиторий
   ansible.builtin.git:
@@ -30,4 +30,4 @@
 - name: Log out of DockerHub
   docker_login:
     state: absent
-    email: "{{ docker_login.email }}"
+    email: "{{ docker_logining.email }}"
