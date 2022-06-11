@@ -1,13 +1,16 @@
 ---
+- name: "[{{ name }}] Конфигурация секрета"
+  include_tasks: "../secret.yml"
+
 - name: "[{{ name }}] Выкладка сервиса"
   block:
     - name: "[{{ name }}] Выкладываем сервис"
       community.docker.docker_swarm_service:
         name: "{{ name }}"
-        image: "rabbitmq:3-management"
+        image: "{{ registry_name }}{{ name }}:{{ version }}"
         state: present
         networks:
         - name: "{{ networkName }}"
-        env:
-          - RABBITMQ_DEFAULT_USER={{ rmq.user }}
-          - RABBITMQ_DEFAULT_PASS={{ rmq.password }}
+        secrets:
+          - secret_name: "{{ name }}.env"
+            filename: "/opt/app/.env"
