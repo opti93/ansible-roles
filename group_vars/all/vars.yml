@@ -14,10 +14,10 @@ registry_name: "optimus2077/"
 services:
   - name: api
     version: latest
-#  - name: app
-#    version: latest
-#  - name: converter
-#    version: latest
+  - name: app
+    version: latest
+  - name: converter
+    version: latest
   - name: rmq
     version: latest
 
