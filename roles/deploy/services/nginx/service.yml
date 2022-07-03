@@ -1,6 +1,10 @@
 ---
-- name: "[{{ name }}] Конфигурация секрета"
-  include_tasks: "../secret.yml"
+- name: "[{{ name }}] Конфигурация конфига"
+  include_tasks: "../config.yml"
+  loop:
+    - nginx.conf
+  loop_control:
+    loop_var: config_item
 
 - name: "[{{ name }}] Выкладка сервиса"
   block:
@@ -12,6 +16,11 @@
         force_update: true
         networks:
         - name: "{{ networkName }}"
+        publish:
+          - mode: ingress
+            protocol: tcp
+            published_port: 3002
+            target_port: 3000
         secrets:
           - secret_name: "{{ name }}.env"
             filename: "/opt/app/.env"

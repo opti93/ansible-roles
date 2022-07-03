@@ -8,7 +8,7 @@
   ansible.builtin.git:
     repo: 'https://github.com/AlariCode/docker-demo.git'
     dest: "{{ git_folder }}"
-    version: block-7
+    version: block-14
 
 - name: Собираем image
   community.docker.docker_image:
@@ -18,6 +18,8 @@
     name: "{{ registry_name }}{{ item.name }}"
     tag: "{{ item.version }}"
     push: yes
+    force_source: true
+    force_tag: true
     source: build
   loop: "{{ services | difference(non_build_services) }}"
 
