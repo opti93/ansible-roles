@@ -28,3 +28,5 @@ non_build_services:
 configs:
   converter:
     queue: q_imageProcessor
+
+networkName: app_network
