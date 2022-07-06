@@ -34,3 +34,5 @@ configs:
     queue: q_imageProcessor
 
 networkName: app_network
+
+advertise_addr: 185.189.151.19
