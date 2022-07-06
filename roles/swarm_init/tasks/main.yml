@@ -7,7 +7,7 @@
 
 - name: Print token
   debug:
-    msg: "Token-stdout: {{ token.stdout }}"
+    var: token
 
 - name: Наличие директории
   local_action:
