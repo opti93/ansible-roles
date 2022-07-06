@@ -1,5 +1,5 @@
 ---
-- name: Подключение
+- name: Join-swarm
   var:
     token: "{{ lookup('file', '../../tokens/token-{{ type }}') }}"
   community.docker.docker_swarm:
