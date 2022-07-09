@@ -13,22 +13,16 @@
   file:
     path: ./tokens
     state: directory
-    mode: '0644'
   delegate_to: localhost
-  become: true
 
 - name: Сохранение токена managers
   copy:
     dest: ./tokens/token-manager
     content: "{{ token.swarm_facts.JoinTokens.Manager }}"
-    mode: '0644'
   delegate_to: localhost
-  become: true
 
 - name: Сохранение токена worker
   copy:
     dest: ./tokens/token-worker
     content: "{{ token.swarm_facts.JoinTokens.Worker }}"
-    mode: '0644'
   delegate_to: localhost
-  become: true
