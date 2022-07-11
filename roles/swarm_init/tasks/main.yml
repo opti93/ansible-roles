@@ -13,8 +13,8 @@
   file:
     path: ./tokens
     state: directory
-    notify: Тест
   delegate_to: localhost
+  notify: Тест
 
 - name: Сохранение токена managers
   copy:
