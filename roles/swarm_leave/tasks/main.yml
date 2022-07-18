@@ -1,0 +1,17 @@
+---
+- name: Перевод статус Drain
+  docker_node:
+    hostname: "{{ node_name }}"
+    availability: drain
+
+- name: Ожидание остановки
+  docker_host_info:
+    containers: yes
+  register: result
+  retries: 30
+  delay: 2
+  until: result.host_info.ContainersRunning == 0
+  delegate_to: "{{ node_name }}"
+
+- name: Удаление ноды из Swarm
+  command: "docker node rm {{ node_name }} --force"

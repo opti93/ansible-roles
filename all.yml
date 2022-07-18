@@ -10,6 +10,9 @@
       tags: build
     - role: deploy
       tags: deploy
+    - role: swarm_leave
+      node_name: vm61535
+      tags: swarm_leave
 
 - name: managers servers
   hosts: managers
