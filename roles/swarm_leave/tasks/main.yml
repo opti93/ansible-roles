@@ -5,8 +5,8 @@
     availability: drain
 
 - name: Ожидание остановки
-  docker_host_info:
-    containers: yes
+  community.docker.docker_host_info:
+    containers: true
   register: result
   retries: 30
   delay: 2
