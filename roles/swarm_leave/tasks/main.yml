@@ -1,6 +1,6 @@
 ---
-- name: Перевод статус Drain
-  docker_node:
+- name: Перевод в статус drain
+  community.docker.docker_node:
     hostname: "{{ node_name }}"
     availability: drain
 
@@ -13,5 +13,5 @@
   until: result.host_info.ContainersRunning == 0
   delegate_to: "{{ node_name }}"
 
-- name: Удаление ноды из Swarm
+- name: Удаление ноды
   command: "docker node rm {{ node_name }} --force"

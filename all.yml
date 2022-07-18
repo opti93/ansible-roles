@@ -11,7 +11,7 @@
     - role: deploy
       tags: deploy
     - role: swarm_leave
-      node_name: s5c22i5nzql7krrjt8u1sy9at
+      node_name: vm61535
       tags: swarm_leave
 
 - name: managers servers
